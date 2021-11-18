@@ -17,7 +17,9 @@ const NavContainer = styled.div`
   padding: 1rem 2rem;
   position: relative;
   @media (min-width: 1000px) {
-    padding: 2rem 10rem;
+    padding: 2rem 0;
+    margin: 0 10rem;
+    border-bottom: 1px solid var(--Grayish-blue)
   }
 `;
 const ContainerLogo = styled.div`
