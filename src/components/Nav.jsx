@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import useWindowDimensions from "../hooks/useWindowDimensions";
@@ -8,6 +8,8 @@ import logo from "../img/logo.svg";
 import Cart from "../img/icon-cart.svg";
 import Profile from "../img/image-avatar.png";
 import Close from "../img/icon-close.svg";
+import Carr from "./Carr";
+import useAddCart from "../hooks/useAddCart";
 /*styled */
 
 const NavContainer = styled.div`
@@ -92,7 +94,9 @@ const ItemLi = styled.li`
 const Nav = () => {
   const [activate, setActivate] = useState(false);
   const [clickedUser, setClickedUser] = useState(false);
+  
   const { width } = useWindowDimensions();
+  const value = useContext("f")
   const OpenClose = () => {
     setActivate(!activate);
   };
@@ -187,6 +191,7 @@ const Nav = () => {
         </ContainerLogo>
         <ContainerProfile>
           <CartItem src={Cart} />
+          <Carr/>
           <NavLink to="user">
             <User
               onClick={(cl) => setClickedUser(!clickedUser)}

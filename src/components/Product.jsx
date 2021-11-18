@@ -7,6 +7,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 //assets
 import plus from "../img/icon-plus.svg";
 import minus from "../img/icon-minus.svg";
+import useAddCart from "../hooks/useAddCart";
 //styled
 const ContainerDataMain = styled.main`
   @media (min-width: 1030px) {
@@ -182,8 +183,19 @@ const Product = ({
 }) => {
   const { width } = useWindowDimensions();
   const [image, setImage] = useState(imgContent);
-
+  const [data, setData] = useState("")
+  const [add, setAdd] = useState(0)
+  const addValue = ()=>{
+    setAdd(add + 1)
+  }
+  const desValue = ()=>{
+    setAdd(add - 1)
+  }
+  const addCart = () => {
+    setData(title)
+  }
   return (
+    
     <ContainerDataMain>
       <ContainerImage>
         {width < 1000 ? (
@@ -253,11 +265,11 @@ const Product = ({
         {/*buttons*/}
         <ContainerButtons>
           <ContIncrement>
-            <IconNegative src={minus} alt="minus" />
-            <DataItemI>{itemAdd} </DataItemI>
-            <IconPlus src={plus} alt="add" />
+            <IconNegative onClick={desValue} src={minus} alt="minus" />
+            <DataItemI>{add}</DataItemI>
+            <IconPlus onClick={addValue} src={plus} alt="add" />
           </ContIncrement>
-          <ButtonAdd>Add to cart</ButtonAdd>
+          <ButtonAdd onClick={addCart} >Add to cart</ButtonAdd>
         </ContainerButtons>
       </ContainerInfo>
     </ContainerDataMain>
