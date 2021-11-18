@@ -16,10 +16,10 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 1rem 2rem;
   position: relative;
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     padding: 2rem 0;
     margin: 0 10rem;
-    border-bottom: 1px solid var(--Grayish-blue)
+    border-bottom: 1px solid var(--Grayish-blue);
   }
 `;
 const ContainerLogo = styled.div`
@@ -37,10 +37,12 @@ const CartItem = styled.img`
 `;
 const User = styled.img`
   width: 4rem;
-  &:hover{
-    border: 2px solid var(--orange); border-radius: 100px; padding: 2px; transition: ease-in-out .2s;
+  &:hover {
+    border: 2px solid var(--orange);
+    border-radius: 100px;
+    padding: 2px;
+    transition: ease-in-out 0.2s;
   }
-  /* ${(p) => p.click}, */
 `;
 //navItems
 const ContainerLinksMobile = styled.div`
@@ -52,7 +54,7 @@ const ContainerLinksMobile = styled.div`
   top: 0;
   z-index: 1000;
   display: ${(props) => (props.active ? "inline" : "none")};
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     display: none;
   }
 `;
@@ -60,21 +62,21 @@ const IconClose = styled.img`
   margin: 0 0 30px 0;
 `;
 const NavContainerItem = styled.div`
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     margin: 0 0 0 1rem;
   }
 `;
 
 const NavContainerItemDesktop = styled.div`
   display: none;
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     margin: 0 0 0 1rem;
     display: inline;
   }
 `;
 const NavItem = styled.nav``;
 const Ul = styled.ul`
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     display: flex;
   }
 `;
@@ -82,7 +84,7 @@ const ItemLi = styled.li`
   margin: 0 0 2rem 0;
   font-weight: var(--f-700);
   font-size: 18px;
-  @media (min-width: 1000px) {
+  @media (min-width: 1030px) {
     margin: 0 0 0 4rem;
   }
 `;
@@ -189,10 +191,6 @@ const Nav = () => {
             <User
               onClick={(cl) => setClickedUser(!clickedUser)}
               src={Profile}
-              /* click={
-                clickedUser === true &&
-                "border: 2px solid var(--orange); border-radius: 100px; padding: 2px; transition: ease-in-out .2s;"
-              } */
             />
           </NavLink>
         </ContainerProfile>
